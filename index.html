@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Zendler – Lokale Admin-Seite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fefaf6;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #8b4513;
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    input {
+      font-size: 1rem;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 60%;
+    }
+    .price {
+      width: 30%;
+      text-align: right;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      background: #8b4513;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #5a3e2b;
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin – Lokale Bearbeitung</h1>
+  <p>Zendler Cafe
+  
+  </p>
+
+  <ul>
+    <li>
+      <input id="itemName1" value="Frühstücksteller">
+      <input id="itemPrice1" class="price" value="7,90 €">
+    </li>
+    <li>
+      <input id="itemName2" value="Rührei mit Brot">
+      <input id="itemPrice2" class="price" value="4,20 €">
+    </li>
+
+     <li>
+      <input id="itemName3" value="Frühstücksteller">
+      <input id="itemPrice3" class="price" value="7,90 €">
+    </li>
+    <li>
+      <input id="itemName4" value="Rührei mit Brot">
+      <input id="itemPrice4" class="price" value="4,20 €">
+    </li> <li>
+      <input id="itemName5" value="Frühstücksteller">
+      <input id="itemPrice5" class="price" value="7,90 €">
+    </li>
+    <li>
+      <input id="itemName6" value="Rührei mit Brot">
+      <input id="itemPrice6" class="price" value="4,20 €">
+    </li> <li>
+      <input id="itemName7" value="Frühstücksteller">
+      <input id="itemPrice7" class="price" value="7,90 €">
+    </li>
+    <li>
+      <input id="itemName8" value="Rührei mit Brot">
+      <input id="itemPrice8" class="price" value="4,20 €">
+    </li> <li>
+      <input id="itemName9" value="Frühstücksteller">
+      <input id="itemPrice9" class="price" value="7,90 €">
+    </li>
+    <li>
+      <input id="itemName10" value="Rührei mit Brot">
+      <input id="itemPrice10" class="price" value="4,20 €">
+    </li> <li>
+      <input id="itemName11" value="Frühstücksteller">
+      <input id="itemPrice11" class="price" value="7,90 €">
+    </li>
+    <li>
+      <input id="itemName12" value="Rührei mit Brot">
+      <input id="itemPrice12" class="price" value="4,20 €">
+    </li>
+
+    
+  </ul>
+
+
+  
+<ul>
+  <li>
+    <textarea id="itemName1" rows="2" placeholder="Schreiben Sie, was Sie nicht vergessen möchten..."></textarea>
+  </li>
+  <li>
+    <textarea id="itemName2" rows="2" placeholder="Schreiben Sie, was Sie nicht vergessen möchten..."></textarea>
+  </li>
+  <li>
+    <textarea id="itemName3" rows="2" placeholder="Schreiben Sie, was Sie nicht vergessen möchten..."></textarea>
+  </li>
+</ul>
+
+<button onclick="saveData()">Änderungen speichern</button>
+
+<script>
+  // Ngarko të dhënat e ruajtura
+  document.querySelectorAll("input, textarea").forEach(element => {
+    const saved = localStorage.getItem(element.id);
+    if (saved) element.value = saved;
+  });
+
+  // Ruaj ndryshimet
+  function saveData() {
+    document.querySelectorAll("input, textarea").forEach(element => {
+      localStorage.setItem(element.id, element.value);
+    });
+    alert("Änderungen gespeichert!");
+  }
+</script>
+
+
+
+</body>
+</html>
